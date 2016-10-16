@@ -10,6 +10,8 @@ RUN apt-get update \
 COPY docker.list /etc/apt/sources.list.d/docker.list
 
 RUN apt-get update \
-    && apt-get install -y docker-engine
+    && apt-get install -y \
+      docker-engine git build-essential subversion libncurses5-dev zlib1g-dev \
+      unzip ccache gawk wget libssl-dev libxml-parser-perl file rsync groff-base
 
 USER jenkins
